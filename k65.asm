@@ -7,7 +7,7 @@
 .text
     lw $s1, n # s1 = size
 
-    addi $s0, $zero, 0 #s0 = 0 (counter)
+    addi $s0, $zero, 1 #s0 = 0 (counter)
     addi $s2, $zero, -100000 #s2 = -∞ (holder)
 
     j for_loop
@@ -27,7 +27,7 @@
 
         bge $s2, $a1, for_loop # if s2 >= a1, loop again
 
-        addi $s2, $a1, 0 #set new max value: s2 = a1
+        addi $s2, $a1, 0 #set new max value: s2 = a1+0
         j for_loop
 
     end_loop:
