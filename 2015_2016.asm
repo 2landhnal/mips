@@ -1,5 +1,5 @@
 .data   
-    a: .word 4
+    a: .word 5
     b: .word 3
     new_line: .asciiz "\n"
 .text
@@ -14,8 +14,7 @@
 
     for_loop:   
         bge $t2, $t1, end_for1 #if t1 > t2 -> exit
-        mult $s0, $t0 #s0 * t0
-        mflo $s0 #save result to s0
+        mul $s0, $s0, $t0 #s0 *= t0
 
         addi $t2, $t2,1  #t2 += 1
         j for_loop
@@ -25,8 +24,7 @@
 
     for_loop2:
         bge $t2, $t0, end_for2 #if t1 > t0 -> exit
-        mult $s1, $t1 #s1 * t1
-        mflo $s1 #save result to s1
+        mul $s1, $s1, $t1 #s1 *= t1
 
         addi $t2, $t2,1  #t2 += 1
         j for_loop2
