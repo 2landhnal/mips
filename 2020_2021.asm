@@ -31,7 +31,7 @@
         j for_loop
 
     end_loop:
-        li $v0, 1
+        li $v0, 1 #print result
         la $a0, ($s0)
         syscall 
 
